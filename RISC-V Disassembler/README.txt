@@ -1,3 +1,5 @@
+main.c converts Machine code(only 0's and 1's) into RiSC-V Instructions acting as a RISC-V Disassembler.
+
 main.c  :  Main code file (containing the C code to convert the Machine level code into 
            disassembled code).
 
