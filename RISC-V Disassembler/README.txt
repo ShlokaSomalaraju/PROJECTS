@@ -1,7 +1,7 @@
 main.c  :  Main code file (containing the C code to convert the Machine level code into 
            disassembled code).
 
-Example Input files : input.txt
+Example Input files : input.txt , input1.txt, input2.txt (To check all the corner case)
 
 The Input file contains 8 hex digits (without 0x), resembling a 32 bit instruction each in a line.
 
