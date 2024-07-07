@@ -1,4 +1,4 @@
-Solution yto the famous Readers-Writers Problem in Operating Systems.
+Solution to the famous Readers-Writers Problem in Operating Systems.
 
 Input file : (inp-params.txt)
 	     nw, nr, kw, kr, muCS, muRem values each line by line in the input file.
