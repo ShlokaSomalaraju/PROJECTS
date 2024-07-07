@@ -1,0 +1,2 @@
+
+main.c converts Machine code(only 0's and 1's) into RiSC-V Instructions acting as a RISC-V Disassembler.
