@@ -8,10 +8,10 @@ Commands and their extensions in "myshell"
       "ls -r" : list the files or directories in the reverse 
                 alphabeticall order.
 
-      "ls -S" : sorts the files bt Size.
+      "ls -S" : sorts the files by Size.
       
       "ls -l" : displays a detailed listing of files and directories, 
-                including file permissions, ownership, size, and modification time. invf      
+                including file permissions, ownership, size, and modification time.      
 
 
  'cp' command:
