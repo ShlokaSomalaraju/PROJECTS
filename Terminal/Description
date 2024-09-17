@@ -1,5 +1,5 @@
 
 Simple_shell is implemented by System function which directly takes the user command and executes it. 
 
-The Main Shell has been implemented to execute commands ls, cp, mv, grep. And Command History feauture 
+The Main Shell has been implemented to execute commands ls, cp, mv, grep with some flags. And Command History feature 
 is included to track commands given by the user. 
