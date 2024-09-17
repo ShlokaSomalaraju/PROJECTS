@@ -51,6 +51,9 @@ Commands and their extensions in "myshell"
        "grep -c" :  This option is used to print the count of matches in each file.
 
 
+To execute the project download the Main_terminal folder and type "make" in a terminal to execute the entire code.
+
+
 
 
 
