@@ -23,8 +23,8 @@ int do_grep(char *pattern,char *filename,char *option);
 int do_cp(char *source_file ,char *dest_file,char *option);
 int do_mv(char *source_file ,char *dest_file,char *option);
 
-char* promptfunc(){
-    
+//To fetch the details of the command prompt of the terminal window that is opened
+char* promptfunc(){   
     getlogin_r(user,sizeof(user));
      strcpy(prompt,user);
      strcat(prompt,"@");
@@ -35,7 +35,6 @@ char* promptfunc(){
      strcat(prompt,path);
      strcat(prompt," $ ");
    return prompt;
-
 }
 
 int countNonspaces(char *str) {
@@ -50,15 +49,14 @@ int countNonspaces(char *str) {
 } 
 
 int main(){
-    
-    
+      
    struct dirent *de;
    DIR *dr;
    struct stat file_stat;
    char *input;
    int check=0;
 
-
+    
    while(1){
  
     input=readline(promptfunc());
@@ -77,51 +75,51 @@ int main(){
 
          token=strtok(NULL," ");
          if(token!=NULL){
-         check++;
-         do_ls(token,check);
+             check++;
+             do_ls(token,check);
          }
          else{
             do_ls(token,check);}
+          
       }
 
 
-      else if(strcmp(token,"cp")==0){
-
+    else if(strcmp(token,"cp")==0){
 
         char source_file[100];
-          char dest_file[100];
-          char option[5];
-          char store_tokens[10][100];
+        char dest_file[100];
+        char option[5];
+        char store_tokens[10][100];
 
-          token=strtok(NULL," ");
-         
-          if(strncmp(token,"-",1)==0){
-             strcpy(option,token);
-             token=strtok(NULL," ");
-           }
-           else if(strncmp(token,"-",1)!=0){
-              strcpy(option,"x");
-           }
+        token=strtok(NULL," ");
 
-                  int i=0;
+        //If there is an option given
+        if(strncmp(token,"-",1)==0){
+            strcpy(option,token);
+            token=strtok(NULL," ");
+        }
+        else if(strncmp(token,"-",1)!=0){
+            strcpy(option,"x");
+        }
+
+        int i=0;
                 
-               while(token!=NULL){
-                   strcpy(store_tokens[i],token);
-                   token=strtok(NULL," ");
-                   i++; 
-               }
+        while(token!=NULL){
+            strcpy(store_tokens[i],token);
+            token=strtok(NULL," ");
+            i++; 
+        }
               
-               for(int j=0;j<i-1;j++){
-                  strcpy(source_file,store_tokens[j]);
-                  strcpy(dest_file,store_tokens[i-1]); 
-                  do_cp(source_file,dest_file,option);
-                  
-               } 
+        for(int j=0;j<i-1;j++){
+            strcpy(source_file,store_tokens[j]);
+            strcpy(dest_file,store_tokens[i-1]); 
+            do_cp(source_file,dest_file,option);
+        } 
 
-      }
+    }
   
 
-     else if(strcmp(token,"mv")==0){
+    else if(strcmp(token,"mv")==0){
 
           char source_file[100];
           char dest_file[100];
@@ -187,8 +185,6 @@ int main(){
               pattern[ptr2-ptr]='\0'; }
               strcpy(second_input,ptr2);
              
-
-
             char *token2 = strtok(second_input," ");   
             token2=strtok(NULL," ");
             char store_tokens[10][1024];
@@ -199,19 +195,16 @@ int main(){
                    token2=strtok(NULL," ");
                    i++; 
                }
-              for(int j=0;j<i;j++){
-                                    
+              
+              for(int j=0;j<i;j++){                  
                   strcpy(filename,store_tokens[j]);
-                  
-                  do_grep(pattern,filename,option);
-                                    
+                  do_grep(pattern,filename,option);                    
               }     
-
-
+              
           } 
 
                       
-          else {
+        else{
 
               strcpy(pattern,token);
               
@@ -222,21 +215,18 @@ int main(){
                    strcpy(store_tokens2[i],token);
                    token=strtok(NULL," ");
                    i++; 
-               }
-              for(int j=0;j<i;j++){
-                                   
+              }
+              
+              for(int j=0;j<i;j++){               
                   strcpy(filename,store_tokens2[j]);
-                  
-                  do_grep(pattern,filename,option);
-                                    
+                  do_grep(pattern,filename,option);                    
               }     
 
           }
-
-    }
          
+      free(input);
+
    }
-  free(input);
    return 0;
 
 }
