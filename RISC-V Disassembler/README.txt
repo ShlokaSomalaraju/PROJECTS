@@ -3,7 +3,7 @@ main.c converts Machine code(only 0's and 1's) into RiSC-V Instructions acting a
 main.c  :  Main code file (containing the C code to convert the Machine level code into 
            disassembled code).
 
-Example Input files : input.txt , input1.txt, input2.txt (To check all the corner case)
+Example Input files : input.txt , input1.txt, input2.txt (To check the corner cases)
 
 The Input file contains 8 hex digits (without 0x), resembling a 32 bit instruction each in a line.
 
