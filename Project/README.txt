@@ -1,3 +1,5 @@
+''' Sensor-Based Human Activity Classification Challenge '''
+
 Requirements: (Libraries used)
 
 		1. Core Libraries:
